@@ -133,6 +133,8 @@ module.exports = class Dispatch {
    */
   open (name) {
     const plugin = this.plugins.get(name)
+    console.log(name)
+    console.log(plugin)
 
     if (plugin) {
       const { filepath, configuration: { main } } = plugin

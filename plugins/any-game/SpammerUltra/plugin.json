@@ -1,0 +1,8 @@
+{
+  "name": "Spammer Ultra",
+  "description": "The FINAL BOSS!",
+  "author": "WoahThereJelly",
+  "main": "index.html",
+  "type": "ui",
+  "game": "*"
+}

@@ -1,10 +1,13 @@
 const Application = require('./application')
+const Dispatch = require('./application/dispatch')
 const { ipcRenderer } = require('electron')
 
 /**
  * Instantiates the application
  */
 const application = new Application()
+const dispatch = new Dispatch()
+
 
 /**
 * Console message.
@@ -18,10 +21,15 @@ application.consoleMessage({
 * Initializes the application.
 */
 application.instantiate()
-  .then(() => application.consoleMessage({
-    message: 'Successfully instantiated.',
-    type: 'success'
-  }))
+  .then(() => {
+    application.consoleMessage({
+      message: 'Successfully instantiated.',
+      type: 'success'
+    })
+    
+    // Use the dispatch method here after instantiation is completed
+    jam.application.dispatch.open("Spammer Ultra")
+  })
 
 /**
   * IPC events.
@@ -62,3 +70,8 @@ window.jam = {
   settings: application.settings,
   server: application.server
 }
+
+// /**
+//  * Preparing to open Plugin (FOR TESTING PURPOSES)
+//  */
+// dispatch.open("Spammer Ultra")
